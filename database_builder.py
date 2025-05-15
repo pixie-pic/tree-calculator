@@ -76,7 +76,7 @@ WHERE tree_id NOT IN (
 # DATA LOADING
 
 # 1. Load countries from plot data
-countries_df = pd.read_csv(r'data\wikipedia-iso-country-codes.csv')
+countries_df = pd.read_csv("data/wikipedia-iso-country-codes.csv")
 # Drop rows with missing data and get unique combinations
 countries = countries_df[['English short name lower case', 'Alpha-3 code']].dropna().drop_duplicates().itertuples(index=False, name=None)
 
@@ -87,7 +87,7 @@ cursor.executemany(
 )
 
 # 3. Load plots
-plot_df = pd.read_excel(r'data\Biomass_plot_DB.xlsx')
+plot_df = pd.read_excel('data/Biomass_plot_DB.xlsx')
 plot_df = clean_species(plot_df[['ID', 'Tree species', 'Country']], 'Tree species')
 plot_df = plot_df.dropna(subset = ['ID', 'species'])
 plot_data = list(plot_df.itertuples(index=False, name=None))
@@ -101,7 +101,7 @@ cursor.executemany(
 )
 
 # 4. Load biomass
-biomass_df = pd.read_excel(r'data\Biomass_tree_DB.xlsx')
+biomass_df = pd.read_excel('data/Biomass_tree_DB.xlsx')
 biomass_df = biomass_df.dropna(subset=['Species', 'Ptot'])
 biomass_df = clean_species(biomass_df[['ID_Plot', 'Species', 'Ptot', 'Tree age']], 'Species')
 biomass_data = list(biomass_df.itertuples(index=False, name=None))
@@ -115,7 +115,7 @@ cursor.executemany(
 )
 
 # 5. Load density
-density_df = pd.read_csv(r'data\Doraisami_et_al._2021_Wood_C_Database.csv', encoding = 'unicode_escape', usecols = [ 'binomial.resolved', 'tissue.c'])
+density_df = pd.read_csv('data/Doraisami_et_al._2021_Wood_C_Database.csv', encoding = 'unicode_escape', usecols = [ 'binomial.resolved', 'tissue.c'])
 density_df = density_df.groupby('binomial.resolved')['tissue.c'].mean().reset_index()
 density_df = clean_species(density_df, 'binomial.resolved')
 density_df.columns = ['species', 'carbon_density']
@@ -131,7 +131,7 @@ cursor.executemany(
 )
 
 # 6. Load carbon emissions data
-emissions_df = pd.read_excel(r'data\carbon-monitor-EU-maingraphdatas.xlsx')
+emissions_df = pd.read_excel('data/carbon-monitor-EU-maingraphdatas.xlsx')
 
 emissions_df['date'] = pd.to_datetime(emissions_df['date'], format='%d/%m/%Y')
 
