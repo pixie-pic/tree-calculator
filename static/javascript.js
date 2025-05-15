@@ -280,6 +280,13 @@ async function loadMap() {
                     event.stopPropagation(); // Prevent click from reaching document
                     tooltip.style("display", "none");
                     selectedCountry = d.properties.name;  // Store clicked country
+                    // tag
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'country_selected', {
+                            'event_category': 'Interaction',
+                            'event_label': selectedCountry
+                        });
+                    }
                     // Always try to fetch data if both are set
                     if (selectedCountry && selectedDate) {
                         fetchTreeData(event);
