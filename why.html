@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block title %}Why Trees Matter - Carbon to Tree{% endblock %}
+
+{% block content %}
+<div class="content-container">
+    <h1>Why Trees Matter</h1>
+    
+    <section class="info-section">
+        <h2>Visualizing Carbon Footprints</h2>
+        <p>Understanding the scale of carbon emissions can be challenging. Numbers like "1 megatonne of CO₂" are difficult to comprehend. Trees provide a tangible, natural measure that helps us visualize our environmental impact.</p>
+        
+        <div class="image-box">
+            <div class="tree-icon">🌳</div>
+            <p class="highlight">A single mature tree can absorb an average of 21-22 kg of carbon dioxide per year.</p>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <h2>Why This Calculator Matters</h2>
+        <ul class="benefit-list">
+            <li>
+                <strong>Making Abstract Concrete:</strong> Converting emissions data into trees needed helps contextualize environmental impact in terms we can understand.
+            </li>
+            <li>
+                <strong>Country-Level Perspective:</strong> Seeing how many trees would be required to offset a country's daily emissions provides a powerful visualization of our collective carbon footprint.
+            </li>
+            <li>
+                <strong>Species-Specific Data:</strong> Different tree species absorb carbon at different rates. Our calculator uses real scientific data about tree species prevalent in each country.
+            </li>
+            <li>
+                <strong>Awareness Building:</strong> Understanding the magnitude of tree-planting needed drives home the importance of both carbon reduction and forest preservation.
+            </li>
+        </ul>
+    </section>
+
+    <section class="info-section">
+        <h2>The Impact of Trees</h2>
+        <p>Trees are essential for more than just carbon sequestration:</p>
+        
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h3>Carbon Capture</h3>
+                <p>Trees absorb CO₂ during photosynthesis, storing carbon in their biomass and releasing oxygen.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>Biodiversity</h3>
+                <p>Forests provide habitat for countless species, supporting complex ecosystems essential for planetary health.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>Air Quality</h3>
+                <p>Trees filter air pollutants, improving the air we breathe and reducing respiratory diseases.</p>
+            </div>
+            
+            <div class="benefit-card">
+                <h3>Water Cycle</h3>
+                <p>Trees regulate the water cycle, preventing soil erosion and flooding while ensuring clean water supplies.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <h2>Beyond Tree Planting</h2>
+        <p>While tree planting is important, our calculator also highlights the need for comprehensive climate action:</p>
+        
+        <div class="action-steps">
+            <div class="action">
+                <h3>Reduce Emissions</h3>
+                <p>The staggering number of trees needed demonstrates why reducing carbon emissions must be our first priority.</p>
+            </div>
+            
+            <div class="action">
+                <h3>Protect Existing Forests</h3>
+                <p>Mature forests capture more carbon than newly planted trees. Preventing deforestation is critical.</p>
+            </div>
+        </div>
+    </section>
+    
+    <div class="call-to-action">
+        <h2>Ready to see the impact?</h2>
+        <p>Return to our calculator to visualize how many trees would be needed to offset your country's emissions.</p>
+        <button onclick="location.href='/home'">Try the Calculator</button>
+    </div>
+</div>
+{% endblock %}

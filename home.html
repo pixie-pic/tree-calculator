@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}Carbon Calculator{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+<div class="container top-section">
+    <!-- Calendar on the left -->
+    <div class="calendar">
+        <div class="calendar-header">
+            <button id="prev-month">&#10094;</button>
+            <h2 id="month-year">Month Year</h2>
+            <button id="next-month">&#10095;</button>
+        </div>
+        <div class="calendar-grid" id="calendar-grid"></div>
+    </div>
+
+    <!-- Map on the right -->
+    <div id="map-container">
+        <svg id="map" width="1000" height="600"></svg>
+        <div id="tooltip"></div>
+        <div id="tree-box"></div>
+    </div>
+</div>
+
+<!-- Instructions below -->
+<div class="container">
+    <div class="info-box" id="instructions-box">
+        <h3>How to use this tool</h3>
+        <ol>
+            <li>Select a date from the calendar on the left</li>
+            <li>Click on any country on the map to view its data</li>
+            <li>View the information in the popup</li>
+        </ol>
+    </div>
+</div>
+{% endblock %}

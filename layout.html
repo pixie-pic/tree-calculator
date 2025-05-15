@@ -1,0 +1,36 @@
+<!-- templates/layout.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Carbon Footprint to Tree Calculator{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>Carbon to Tree
+            <div class="button-container">
+                <button onclick="document.location.href='/home'">Home</button>
+                <button onclick="location.href='/why'">Why</button>
+                <button onclick="location.href='/methodology'">Methodology</button>
+                <button onclick="location.href='/dataset'">Dataset</button>
+            </div>
+        </header>
+
+        {% block content %}
+        <!-- Page-specific content goes here -->
+        {% endblock %}
+    </div>
+
+    <div id="tooltip" class="tooltip"></div>
+    <div id="tree-box" class="tree-box"></div>
+
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading data...</div>
+    </div>
+    <script src="{{ url_for('static', filename='javascript.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block title %}Datasets - Carbon Footprint to Tree Calculator{% endblock %}
+
+{% block content %}
+<div class="content-container">
+    <h1>Datasets</h1>
+    
+    <div class="info-section">
+        <h2>About Our Data</h2>
+        <p>This application uses multiple datasets to calculate the number of trees needed to absorb a country's carbon emissions on a specific day. The calculation takes into account different tree species' carbon absorption rates, their prevalence in different countries, and daily carbon emission data.</p>
+        
+        <div class="image-box">
+            <div class="tree-icon">🌳</div>
+            <p class="highlight">All datasets used in this project are publicly available and properly cited according to scientific standards.</p>
+        </div>
+    </div>
+    
+    <div class="dataset-section">
+        <h2>Our Data Sources</h2>
+        
+        <div class="dataset-cards">
+            <div class="dataset-card">
+                <h3>Forest Biomass Structure for Eurasia</h3>
+                <p class="dataset-description">Contains data on biomass structure and tree growth for various forest plots across Eurasia.</p>
+                <div class="dataset-metadata">
+                    <p><strong>Used for:</strong> Tree biomass and growth rates</p>
+                    <p><strong>Citation:</strong> Schepaschenko, D., Shvidenko, A., Usoltsev, V. <i>et al.</i> (2017). A dataset of forest biomass structure for Eurasia. <i>Scientific Data</i>, <i>4</i>, 170070.</p>
+                    <p><strong>DOI:</strong> <a href="https://doi.org/10.1038/sdata.2017.70" target="_blank">https://doi.org/10.1038/sdata.2017.70</a></p>
+                </div>
+            </div>
+            
+            <div class="dataset-card">
+                <h3>ISO 3166-1 Country Codes</h3>
+                <p class="dataset-description">Standard codes for the names of countries, dependent territories, and special areas of geographical interest.</p>
+                <div class="dataset-metadata">
+                    <p><strong>Used for:</strong> Country identification and mapping</p>
+                    <p><strong>Source:</strong> ISO 3166 Maintenance Agency</p>
+                    <p><strong>Access:</strong> <a href="https://www.iso.org/iso-3166-country-codes.html" target="_blank">https://www.iso.org/iso-3166-country-codes.html</a></p>
+                </div>
+            </div>
+            
+            <div class="dataset-card">
+                <h3>Wood Carbon Database</h3>
+                <p class="dataset-description">A database of carbon density values for different wood tissues and tree species.</p>
+                <div class="dataset-metadata">
+                    <p><strong>Used for:</strong> Carbon density calculations</p>
+                    <p><strong>Citation:</strong> Doraisami, M., Srivastava, N., Benítez-López, A., Haberl, H., Kastner, T., & Chaudhary, A. (2021). Wood carbon database.</p>
+                </div>
+            </div>
+            
+            <div class="dataset-card">
+                <h3>Carbon Monitor</h3>
+                <p class="dataset-description">Near-real-time monitoring of global carbon emissions by country and sector.</p>
+                <div class="dataset-metadata">
+                    <p><strong>Used for:</strong> Daily carbon emission data by country</p>
+                    <p><strong>Citation:</strong> Liu, Z., Ciais, P., Deng, Z. <i>et al.</i> (2020). Near-real-time monitoring of global CO2 emissions reveals the effects of the COVID-19 pandemic. <i>Nature Communications</i>, <i>11</i>, 5172.</p>
+                    <p><strong>Access:</strong> <a href="https://carbonmonitor.org/" target="_blank">https://carbonmonitor.org/</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="dataset-methodology">
+        <h2>How We Use The Data</h2>
+        
+        <div class="methodology-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Tree Species Data</h3>
+                <p>We use the GBIF Backbone Taxonomy to identify tree species and their scientific classifications. This helps us match common names with scientific names and ensure consistency across datasets.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Biomass Calculation</h3>
+                <p>The Forest Biomass dataset provides information on tree growth rates and biomass accumulation. We use this to calculate how much biomass different tree species can accumulate over time.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Carbon Density</h3>
+                <p>The Wood Carbon Database gives us information on how much carbon different tree species can store in their tissues. We use this to convert biomass to carbon sequestration potential.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Country Emissions</h3>
+                <p>The Carbon Monitor dataset provides daily carbon emission data by country. We use this to calculate how many trees would be needed to offset those emissions.</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">5</div>
+                <h3>Final Calculation</h3>
+                <p>By combining all this data, we can calculate how many trees of a particular species would be needed to absorb a country's carbon emissions for a specific day.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="download-section">
+        <h2>Download Resources</h2>
+        <p>While we cannot directly provide downloads for these datasets due to copyright restrictions, you can access them through their original sources using the links provided above.</p>
+        
+        <div class="call-to-action">
+            <h3>Want to Learn More?</h3>
+            <p>Check out our methodology page to understand how these datasets are processed and used in our calculations.</p>
+            <button onclick="location.href='/methodology'">View Methodology</button>
+        </div>
+    </div>
+    
+    <div class="reference-section">
+        <h2>References</h2>
+        <ol class="references">
+            <li>Schepaschenko, D., Shvidenko, A., Usoltsev, V., Lakyda, P., Luo, Y., Vasylyshyn, R., Lakyda, I., Myklush, Y., See, L., McCallum, I., Fritz, S., Kraxner, F., & Obersteiner, M. (2017). A dataset of forest biomass structure for Eurasia. <i>Scientific Data</i>, <i>4</i>, 170070. <a href="https://doi.org/10.1038/sdata.2017.70">https://doi.org/10.1038/sdata.2017.70</a></li>
+            <li>GBIF Secretariat. (2023). GBIF Backbone Taxonomy. <a href="https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c">https://www.gbif.org/dataset/d7dddbf4-2cf0-4f39-9b2a-bb099caae36c</a></li>
+            <li>International Organization for Standardization. (2020). ISO 3166-1:2020 — Codes for the representation of names of countries and their subdivisions — Part 1: Country codes. <a href="https://www.iso.org/iso-3166-country-codes.html">https://www.iso.org/iso-3166-country-codes.html</a></li>
+            <li>Doraisami, M., Srivastava, N., Benítez-López, A., Haberl, H., Kastner, T., & Chaudhary, A. (2021). Wood carbon database.</li>
+            <li>Liu, Z., Ciais, P., Deng, Z., Lei, R., Davis, S. J., Feng, S., Zheng, B., Cui, D., Dou, X., Zhu, B., Guo, R., Ke, P., Sun, T., Lu, C., He, P., Wang, Y., Yue, X., Wang, Y., Lei, Y., ... Schellnhuber, H. J. (2020). Near-real-time monitoring of global CO2 emissions reveals the effects of the COVID-19 pandemic. <i>Nature Communications</i>, <i>11</i>, 5172. <a href="https://doi.org/10.1038/s41467-020-18922-7">https://doi.org/10.1038/s41467-020-18922-7</a></li>
+        </ol>
+    </div>
+</div>
+{% endblock %}

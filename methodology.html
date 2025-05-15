@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block title %}Calculation Methodology - Carbon to Tree{% endblock %}
+
+{% block content %}
+<div class="content-container">
+    <h1>Our Methodology</h1>
+    
+    <section class="methodology-section">
+        <h2>How We Calculate Trees Needed</h2>
+        <p>Our calculator uses scientific data and established carbon accounting principles to determine how many trees would be needed to absorb a country's daily carbon emissions.</p>
+        
+        <div class="methodology-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Country Emissions Data</h3>
+                <p>We use daily carbon emission data for various countries, measured in megatonnes of CO₂ per day (Mt CO₂).</p>
+                <div class="code-preview">FROM country_emissions WHERE country_name = [selected country] AND date = [selected date]</div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Tree Species Identification</h3>
+                <p>We identify the most common tree species in each country based on plot frequency data.</p>
+                <div class="code-preview">SELECT species_dominant, COUNT(*) FROM plots WHERE country_code = [country code] GROUP BY species_dominant ORDER BY COUNT(*) DESC</div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Carbon Sequestration Calculation</h3>
+                <p>For each species, we calculate average biomass and carbon density to determine carbon storage capacity.</p>
+                <div class="equation">Carbon per tree (kg) = Average Biomass (kg) × Carbon Density (%)</div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Trees Required Calculation</h3>
+                <p>We convert country emissions from megatonnes to kilograms and divide by the carbon storage per tree.</p>
+                <div class="equation">Trees Needed = Emissions (kg) ÷ Carbon per Tree (kg)</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="methodology-section">
+        <h2>Data Sources & Scientific Background</h2>
+        
+        <div class="data-source">
+            <h3>Biomass Data</h3>
+            <p>Our biomass data comes from field measurements across multiple forest plots, recording individual tree biomass by species and age.</p>
+        </div>
+        
+        <div class="data-source">
+            <h3>Carbon Density</h3>
+            <p>We use species-specific carbon density values from the scientific literature, particularly the comprehensive database by Doraisami et al. (2021).</p>
+        </div>
+        
+        <div class="data-source">
+            <h3>Country Emissions</h3>
+            <p>Daily carbon emissions data is sourced from the Carbon Monitor initiative, providing up-to-date measurements for various countries.</p>
+        </div>
+
+    </section>
+
+    <section class="methodology-section">
+        <h2>Scientific Considerations</h2>
+        
+        <div class="consideration">
+            <h3>Tree Age Matters</h3>
+            <p>Our calculations consider that mature trees sequester more carbon than young saplings. The biomass data incorporates tree age as a factor in carbon storage capacity.</p>
+        </div>
+        
+        <div class="consideration">
+            <h3>Geographic Variations</h3>
+            <p>The same tree species may grow differently based on climate, soil conditions, and other factors. We use country-specific data when available to account for these variations.</p>
+        </div>
+        
+        <div class="consideration">
+            <h3>Approximations When Necessary</h3>
+            <p>For countries with limited tree species data, we use the most common global species as approximations, clearly indicating when this occurs.</p>
+        </div>
+        
+        <div class="consideration">
+            <h3>Carbon Storage vs. Sequestration Rate</h3>
+            <p>Our calculator focuses on the amount of carbon already stored in trees rather than annual sequestration rates, providing a point-in-time comparison between emissions and required tree mass.</p>
+        </div>
+    </section>
+    
+    <div class="call-to-action">
+        <h2>Ready to see the calculation in action?</h2>
+        <p>Try our calculator to visualize the relationship between carbon emissions and trees.</p>
+        <button onclick="location.href='/home'">Try the Calculator</button>
+    </div>
+</div>
+{% endblock %}

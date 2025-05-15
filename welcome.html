@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block body_class %}welcome-page{% endblock %}
+
+{% block content %}
+<div class="welcome-container">
+    <div class="welcome-content">
+        <h1>Welcome to Our Platform</h1>
+        <p>Discover amazing features and insights with our interactive tools.</p>
+        
+        <div class="welcome-steps">
+            <h2>Getting Started</h2>
+            <ol>
+                <li>Click the "Get Started" button below</li>
+                <li>Explore the interactive map and calendar</li>
+                <li>Discover how many trees are needed to absorb the carbon emissions of a country on a date</li>
+                <li>Make data-driven decisions</li>
+            </ol>
+            
+            <div class="welcome-actions">
+                <button id="startButton" class="start-button" onclick="location.href='/home'">Get Started</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
