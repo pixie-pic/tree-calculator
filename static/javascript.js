@@ -113,6 +113,12 @@ const renderCalendar = () => {
                 // Create a new date object to avoid reference issues
                 selectedDate = new Date(currentDay);
                 renderCalendar();
+                if (typeof gtag === 'function') {
+                    gtag('event', 'date_selected', {
+                        'event_category': 'Interaction',
+                        'event_label': selectedDate.toISOString().split('T')[0] // YYYY-MM-DD
+                    });
+                }
                 // Use the real event if available, else a dummy
                 if (selectedCountry && selectedDate) {
                     fetchTreeData(event || {pageX:0, pageY:0, clientX:0, clientY:0});
