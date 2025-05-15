@@ -131,7 +131,7 @@ cursor.executemany(
 )
 
 # 6. Load carbon emissions data
-emissions_df = pd.read_excel('data/carbon-monitor-EU-maingraphdatas.xlsx')
+emissions_df = pd.read_excel('data/carbon-monitor-EU_sample.xlsx', engine='openpyxl')
 
 emissions_df['date'] = pd.to_datetime(emissions_df['date'], format='%d/%m/%Y')
 
