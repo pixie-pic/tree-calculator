@@ -5,6 +5,14 @@ from pathlib import Path
 
 app = Flask(__name__)
 
+from pathlib import Path
+import os
+
+# Check if the DB file exists
+if not Path("database/trees.db").exists():
+    print("Database not found. Running setup...")
+    import database_builder
+    
 # Get the absolute path to the database file
 BASE_DIR = Path(__file__).parent
 DB_PATH = BASE_DIR / 'database' / 'trees.db'
