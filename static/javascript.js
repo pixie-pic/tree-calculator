@@ -116,7 +116,7 @@ const renderCalendar = () => {
                 if (typeof gtag === 'function') {
                     gtag('event', 'date_selected', {
                         'event_category': 'Interaction',
-                        'event_label': selectedDate.toISOString().split('T')[0] // YYYY-MM-DD
+                        'event_label': selectedDate
                     });
                 }
                 // Use the real event if available, else a dummy
