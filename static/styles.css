@@ -88,6 +88,25 @@ header {
 }
 
 /* ====================
+   NOTICE STYLES
+   ==================== */
+.transparency-notice {
+   margin-top: 40px;
+   padding: 8px 20px;
+   font-size: 12px;
+   font-style: italic;
+   text-align: center;
+   border-top: 1px solid #dee2e6;
+   background-color: #f8f9fa;
+   font-family: "Times New Roman", Times, serif;
+}
+
+.notice-content {
+   max-width: 800px;
+   margin: 0 auto;
+}
+
+/* ====================
    MAP STYLES
    ==================== */
 #map-container {
