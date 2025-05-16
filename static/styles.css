@@ -752,6 +752,10 @@ svg {
     transform: scale(1.05);
 }
 
+/* ====================
+   WELCOME PAGE
+   ==================== */
+
 .welcome-container {
     background: white;
     min-height: 100vh;
@@ -764,7 +768,6 @@ svg {
 .welcome-content {
     background: white;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     padding: 40px;
     max-width: 800px;
     width: 100%;
