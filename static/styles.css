@@ -97,7 +97,7 @@ header {
    font-style: italic;
    text-align: center;
    border-top: 1px solid #dee2e6;
-   background-color: #f8f9fa;
+   background-color: transparent;
    font-family: "Times New Roman", Times, serif;
 }
 
@@ -753,7 +753,7 @@ svg {
 }
 
 .welcome-container {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: white;
     min-height: 100vh;
     display: flex;
     justify-content: center;
